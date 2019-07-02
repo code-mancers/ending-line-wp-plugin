@@ -87,10 +87,10 @@ function get_options() {
     Provide any text value here for appending it to end of every post.<br />
     <input type="text" name="ending-line-text"
     value="<?php
-    echo stripslashes_deep ( esc_attr ( get_option ( 'ending-line-text' ) ) );
+    echo stripslashes_deep(esc_attr(get_option('ending-line-text')));
     ?>" />
-  </br>
-</div>
+    </br>
+  </div>
 <?php
 }
 
@@ -101,6 +101,10 @@ function get_options() {
 */
 add_filter ( 'the_content', 'append_content' );
 function append_content($content) {
-  return $content.stripslashes_deep ( esc_attr ( get_option ( 'ending-line-text' ) ) );
+  return $content.stripslashes_deep(
+    esc_attr(
+      get_option( 'ending-line-text' )
+    )
+  );
 }
 ?>
