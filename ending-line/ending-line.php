@@ -82,15 +82,14 @@ add_action ( "admin_init", "init_plugin_settings" );
 * @since 1.0
 */
 function get_options() {
-  ?>
-  <div class="postbox" style="width: 65%; padding: 30px;">
-    Provide any text value here for appending it to end of every post.<br />
-    <input type="text" name="ending-line-text"
-    value="<?php
+?>
+  <p id="tagline-description" class="description">
+    Provide any text value here for appending it to end of every post.
+  </p>
+  <input type="text" name="ending-line-text" class="large-text"
+  value="<?php
     echo stripslashes_deep(esc_attr(get_option('ending-line-text')));
-    ?>" />
-    </br>
-  </div>
+  ?>"/>
 <?php
 }
 
